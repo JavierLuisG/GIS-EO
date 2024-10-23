@@ -1,5 +1,8 @@
 import axios from "axios";
 import apiKey from "../../middleware/config.json";
+const baseUrl = process.env.NODE_ENV === 'production' 
+  ? 'https://app.skyfi.com' 
+  : '/platform-api';
 
 export const skyfiPlatformApiArchives = async (dispatch, filters) => {
     try {
@@ -18,7 +21,7 @@ export const skyfiPlatformApiArchives = async (dispatch, filters) => {
             page_size: 10,
         };
         let archives_response = await axios.post(
-            "/platform-api/archives",
+            `${baseUrl}/archives`,
             request,
             { headers: headers }
         );
