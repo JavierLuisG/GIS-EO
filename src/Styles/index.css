@@ -1,0 +1,534 @@
+:root {
+  --bg-principal-color: white;
+  --bg-secondary-color: rgba(233, 230, 230, 0.521);
+  --bg-navbar-color: rgb(9, 6, 20);
+  --borders-principal: rgb(199, 191, 191);
+  --borders-secondary: rgb(63, 61, 61);
+  --hover-navbar-icon-color: rgba(205, 195, 230, 0.123);
+  --hover-card-image-color: rgba(245, 130, 85, 0.185);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  color: black;
+  box-sizing: border-box;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ------------------------ Existing Image ------------------------ */
+.left_container {
+  width: 390px;
+  background-color: var(--bg-principal-color);
+}
+
+/* ------------------------ Search Existing Image ------------------------ */
+.search_container {
+  background-color: var(--bg-secondary-color);
+  width: 100%;
+  height: 64px;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  .input_search {
+    height: 48px;
+    width: 100%;
+    padding: 0 48px;
+    font-size: 1em;
+    border: 1px solid var(--borders-principal);
+    border-radius: 5px;
+    outline: none;
+
+    &:focus {
+      border: 1px solid var(--borders-secondary);
+    }
+  }
+
+  .label_search {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 87px;
+  }
+
+  .btn_search_container {
+    position: absolute;
+    left: 402px;
+
+    .btn_search {
+      width: 40px;
+      height: 40px;
+      background-color: var(--bg-principal-color);
+      border: none;
+      border-left: 1px solid var(--borders-principal);
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--bg-secondary-color);
+        border-radius: 3px;
+      }
+    }
+  }
+}
+
+/* ------------------------ Options Existign ------------------------ */
+.scroll_container {
+  height: calc(100vh - 103px);
+  overflow-y: auto;
+}
+
+.btn_commercial,
+.btn_open {
+  width: 50%;
+  border: none;
+  padding: 0.5em;
+  background-color: var(--bg-secondary-color);
+  font-weight: 600;
+  font-size: 1em;
+  cursor: pointer;
+
+  &:active {
+    background-color: var(--hover-navbar-icon-color);
+  }
+}
+
+/* ------------------------ Filters ------------------------ */
+.filter_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-principal-color);
+
+  &>p {
+    padding: 1em;
+    width: 100%;
+    color: var(--borders-secondary);
+  }
+
+  .icon_filter {
+    padding: 1em 1em 1em 0;
+
+    &>button {
+      width: 40px;
+      height: 40px;
+      background-color: var(--bg-principal-color);
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--bg-secondary-color);
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+/* ------------------------ Card Existign ------------------------ */
+.container_cards {
+  padding: 0 0.5em 0.5em 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.card_container {
+  width: 100%;
+  padding: 0.5em;
+  border: 1px solid var(--borders-principal);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+  justify-content: space-between;
+  font-size: 16px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--hover-card-image-color);
+  }
+}
+
+.caracterist_card {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+
+  .info_card {
+    font-size: 0.9em;
+
+    .cloud_p {
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      align-items: center;
+      gap: 2px;
+    }
+  }
+}
+
+.price_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .price {
+    display: flex;
+    align-items: center;
+    gap: 0.2em;
+  }
+
+  .delivery {
+    text-align: end;
+  }
+}
+
+/* ------------------------ Existign link tasking order ------------------------ */
+.link_taskingorder {
+  width: 100%;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9em;
+  border: 1px solid var(--borders-principal);
+  border-radius: 5px;
+
+  &>a {
+    background-color: var(--bg-navbar-color);
+    color: var(--bg-principal-color);
+    width: 100%;
+    height: 24px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:active {
+      border: 2px solid var(--bg-navbar-color);
+      font-weight: bold;
+      background-color: var(--bg-principal-color);
+      color: var(--bg-navbar-color);
+    }
+  }
+}
+
+/* ------------------------ Detail image ------------------------ */
+.detail_container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* Ocupa toda la altura de la pantalla */
+  overflow: hidden;
+  /* Evita que el contenido salga del viewport */
+}
+
+.header_detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-secondary-color);
+
+  & .icon_preview {
+    width: 40px;
+    height: 40px;
+
+    &>a {
+      padding-left: 1em;
+      display: flex;
+      height: 100%;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .msg_preview {
+    padding: 1em;
+    width: 100%;
+  }
+
+}
+
+.title_detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 1.5em;
+  border-bottom: 1px solid var(--borders-principal);
+
+  .btn_clarity {
+    width: 30px;
+    height: 30px;
+    background-color: var(--bg-principal-color);
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--borders-principal);
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--bg-secondary-color);
+    }
+  }
+}
+
+.content_detail {
+  padding: 0.8em;
+
+  .general_info_detail {
+    display: flex;
+    gap: 1em;
+
+    .img_detail {
+      width: 100px;
+      height: 100px;
+      border-radius: 5px;
+    }
+
+    .info_detail {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .info_second {
+        font-size: 14px;
+      }
+    }
+
+    .btn_sample_detail {
+      height: 32px;
+      width: 160px;
+      border: none;
+      border-radius: 5px;
+      border: 2px solid var(--bg-navbar-color);
+      background-color: var(--bg-principal-color);
+      color: var(--bg-navbar-color);
+      font-weight: bold;
+      padding: 0px 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      &:active {
+        background-color: var(--bg-navbar-color);
+        color: var(--bg-principal-color);
+      }
+    }
+  }
+
+  .specific_info_detail {
+    padding-top: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5em;
+
+    .cuadrilla_detail {
+      font-size: 14px;
+      display: flex;
+      gap: 1em;
+      border-bottom: 1px solid var(--borders-principal);
+      padding: 3px;
+
+      &>p {
+        width: 50%;
+      }
+    }
+  }
+}
+
+.footer_detail {
+  padding: 1em;
+  height: 73px;
+  width: 100%;
+  box-shadow: 0px 3px 15px 0px var(--borders-secondary);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .price_footer_detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4px;
+  }
+
+  .text_sizemini {
+    font-size: 12px;
+  }
+
+  .price_text {
+    display: flex;
+    align-items: center;
+  }
+
+  .price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 8px;
+  }
+
+  .btn_footer_detail {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--bg-navbar-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+
+    &>p {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--bg-principal-color);
+    }
+
+    &>svg {
+      fill: var(--bg-principal-color);
+    }
+
+    &:active {
+      border: 2px solid var(--bg-navbar-color);
+      background-color: var(--bg-principal-color);
+      color: var(--bg-navbar-color);
+      fill: var(--bg-navbar-color);
+
+      &>p {
+        color: var(--bg-navbar-color);
+      }
+
+      &>svg {
+        fill: var(--bg-navbar-color);
+      }
+    }
+  }
+}
+
+/* ------------------------ Form aoi ------------------------ */
+.formAOI_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1.5em;
+  padding: 1em 0;
+
+  .form_text_container {
+    text-align: center;
+
+    .text_quetion {
+      font-weight: bolder;
+      font-size: large;
+    }
+
+    .text_info {
+      font-weight: lighter;
+    }
+  }
+
+  .btn_createAOI {
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    border-radius: 8px;
+    color: var(--bg-principal-color);
+    background-color: var(--bg-navbar-color);
+    cursor: pointer;
+
+    &:active {
+      border: 2px solid var(--bg-navbar-color);
+      background-color: var(--bg-principal-color);
+      color: var(--bg-navbar-color);
+    }
+  }
+}
+
+/* ------------------------ Navbar ------------------------ */
+.layout_navbar {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar_container {
+  width: 66px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  background-color: var(--bg-navbar-color);
+}
+
+.hr_line {
+  width: 100%;
+  height: 1px;
+  border: none;
+  background-color: var(--borders-secondary);
+  margin: 8px 0px;
+}
+
+.btn_navbar {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-navbar-color);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--hover-navbar-icon-color);
+  }
+
+  .img_navbar {
+    width: 26px;
+
+    &:hover {
+      scale: 1.05;
+    }
+  }
+
+  .principal_icon {
+    width: 40px;
+
+    &:hover {
+      scale: 1.05;
+      color: #f1bd12;
+    }
+  }
+}
+
+/* ------------------------ MapEsri ------------------------ */
+#viewDiv {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
