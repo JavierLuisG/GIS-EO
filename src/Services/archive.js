@@ -1,8 +1,9 @@
 import axios from "axios";
 import apiKey from "../../middleware/config.json";
-const baseUrl = process.env.NODE_ENV === 'production' 
-  ? 'https://app.skyfi.com' 
-  : '/platform-api';
+const corsProxy = 'https://cors-anywhere.herokuapp.com/';
+const baseUrl = process.env.NODE_ENV === 'production'
+    ? `${corsProxy}https://app.skyfi.com`
+    : '/platform-api';
 
 export const skyfiPlatformApiArchives = async (dispatch, filters) => {
     try {
